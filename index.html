@@ -35,7 +35,7 @@
         <div class="Contentbox">
 
             <div class="Leftcontentbox">
-                <div class="Userimage"><img  src="assets/person.png" alt="userprofile-image"></div>
+                <div class="Userimage"><img id="profilePhoto"  src="assets/person.png" alt="userprofile-image"></div>
                 
             </div>
             
@@ -44,17 +44,17 @@
 
 
                 <div class="Topinfobox">
-                    <h2>Username Surname</h2>
-                    <h3>18 jan 2023</h3>
+                    <h2 id="Username">Username Surname</h2>
+                    <h3 id="date">18 jan 2023</h3>
                 </div>
-                <div class="Topinfolinkbox"><a href="www.google.com">@username page</a></div>
+                <div class="Topinfolinkbox"><a id="Profilelink" target="_blank" >@username page</a></div>
 
-                <div class="Middleinfobox"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam quasi consectetur deleniti odit non assumenda dolorum saepe odio dicta labore!</p></div>
+                <div class="Middleinfobox"><p id="bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam quasi consectetur deleniti odit non assumenda dolorum saepe odio dicta labore!</p></div>
                 
                 <div class="Profileinfobox">
-                    <div class="Profilebox"><p>Repos</p><h2>11</h2></div>
-                    <div class="Profilebox"><p>Followers</p><h2>11233</h2></div>
-                    <div class="Profilebox">Following<h2>13</h2></div>
+                    <div class="Profilebox"><p>Repos</p><h2 id="Repo">11</h2></div>
+                    <div class="Profilebox"><p>Followers</p><h2 id="Followers">11233</h2></div>
+                    <div class="Profilebox">Following<h2 id="Following">13</h2></div>
                 </div>
 
                 <div class="Socialbox">
@@ -76,5 +76,6 @@
     </main>
 
     <script src="js/mode.js"></script>
+    <script type="module" src="js/dataBinding.js"></script>
 </body>
 </html>
