@@ -1,21 +1,27 @@
 import { fetchGitHubProfile } from './gitState.js'
 
-const Username=document.getElementById("Username")
-const date=document.getElementById("date")
-const bio=document.getElementById("bio")
-const Profilelink=document.getElementById("Profilelink")
-const repo=document.getElementById("Repo")
-const following=document.getElementById("Following")
-const followers=document.getElementById("Followers")
-const profileimg=document.getElementById("profilePhoto")
+let Username=document.getElementById("Username")
+let date=document.getElementById("date")
+let bio=document.getElementById("bio")
+let Profilelink=document.getElementById("Profilelink")
+let repo=document.getElementById("Repo")
+let following=document.getElementById("Following")
+let followers=document.getElementById("Followers")
+let profileimg=document.getElementById("profilePhoto")
+let search = document.getElementById('searchUser');
+let searchbtn = document.getElementById('searchButton');
 
 
-let biotext="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam quasi consectetur deleniti odit non assumenda dolorum saepe odio dicta labore. (No Bio Found!)"
+
+
 function updateall(username){
     
-    
+
+    let biotext="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam quasi consectetur deleniti odit non assumenda dolorum saepe odio dicta labore. (No Bio Found!)"
     fetchGitHubProfile(username)
     .then(profile => {
+
+    if(profile.name){
     if(profile.description){biotext=profile.description}
     
       if (profile) {
@@ -29,11 +35,36 @@ function updateall(username){
         Profilelink.textContent=profile.user
         Profilelink.href=profile.Profilelink
 
-        
-    
-      }
+        }      
+    }
     });
 
 
 }
-updateall("yyuvraj54")
+
+search.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter'){
+        let enteredText = search.value;
+        updateall(enteredText);
+    }
+});
+
+
+
+
+
+
+function buttonClickHandler() {
+    let enteredText = search.value;
+   if(!updateall(enteredText));
+        
+    
+    
+}
+searchbtn.addEventListener('click', buttonClickHandler);
+
+
+
+
+//initial seached user
+updateall("yyuvraj54");

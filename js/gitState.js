@@ -6,7 +6,7 @@ export function fetchGitHubProfile(username) {
       .then(response => response.json())
       .then(data => {
         
-        console.log(data)
+        
         const profileName = data.name;
         const profilePicture = data.avatar_url;
         const followerCount = data.followers;
